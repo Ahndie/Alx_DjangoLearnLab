@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(api.urls)),
+    path('books/', views.list_books, name='list_books'),
+    path('books/create/', views.create_book, name='create_book'),
+    path('books/update/<int:id>/', views.update_book, name='update_book'),
+    path('books/delete/<int:id>/', views.delete_book, name='delete_book'),
 ]
