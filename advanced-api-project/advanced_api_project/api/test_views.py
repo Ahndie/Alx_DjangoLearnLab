@@ -1,7 +1,7 @@
 from rest_framework import status
 from django.test import APITestCase
 from django.contrib.auth.models import User
-from .models import Book, Author
+from ...api.models import Book, Author
 from .seriealizers import BookSerializer
 
 class BookCreateTest(APITestCase):
