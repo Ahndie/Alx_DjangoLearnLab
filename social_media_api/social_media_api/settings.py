@@ -135,3 +135,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Security Settings
+SECURE_BROWSER_XSS_FILTER = True  # Enables the browser's XSS protection mechanism.
+X_FRAME_OPTIONS = 'DENY'  # Prevents the site from being displayed in a frame to protect against clickjacking.
+SECURE_SSL_REDIRECT = True  # Redirects all non-HTTPS requests to HTTPS.
