@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -141,3 +142,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECURE_BROWSER_XSS_FILTER = True  # Enables the browser's XSS protection mechanism.
 X_FRAME_OPTIONS = 'DENY'  # Prevents the site from being displayed in a frame to protect against clickjacking.
 SECURE_SSL_REDIRECT = True  # Redirects all non-HTTPS requests to HTTPS.
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+# Directories for static files in development
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),  # Local static files
+]
+
+# Directory for collected static files in production
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
